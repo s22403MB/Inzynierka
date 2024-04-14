@@ -23,20 +23,20 @@ if st.session_state['formVisible']:
                                                           "high.school", "professional.course", "university.degree"])
     st.session_state['month'] = st.slider("Month:", 1, 12, 1)
     st.session_state['day_of_the_week'] = st.slider("Day of the week:", 1, 5, 1)
-    st.session_state['default'] = st.radio("Has credit in default?", options=["no", "yes", "unknown"], horizontal=True)
-    st.session_state['housing_loan'] = st.radio("Has housing loan", options=["no", "yes", "unknown"], horizontal=True)
+    st.session_state['default'] = st.radio("Has credit?", options=["no", "yes", "unknown"], horizontal=True)
+    st.session_state['housing_loan'] = st.radio("Has housing loan?", options=["no", "yes", "unknown"], horizontal=True)
     st.session_state['personal_loan'] = st.radio("Has personal loan?", options=["no", "yes", "unknown"],
                                                  horizontal=True)
-    st.session_state['contact_type'] = st.radio("Contact communication type", options=["cellular", "telephone"],
+    st.session_state['contact_type'] = st.radio("Contact communication type:", options=["cellular", "telephone"],
                                                 horizontal=True)
-    st.session_state['contacted_before'] = st.radio("Client contacted before?", options=["no", "yes"],
+    st.session_state['contacted_before'] = st.radio("Was the client contacted before?", options=["no", "yes"],
                                                     horizontal=True)
 
     if st.session_state['contacted_before'] == "yes":
         st.session_state['last_contact'] = st.number_input("Number of days that passed by after the client was last "
-                                                           "contacted", step=1)
+                                                           "contacted:", step=1, max_value=998)
         st.session_state['contacts_in_current_campaign'] = st.number_input("Number of contacts performed (in this "
-                                                                           "campaign)", step=1)
+                                                                           "campaign)", step=1, max_value=50)
         st.session_state['contacts_in_previous_campaigns'] = st.number_input("Number of contacts performed (before "
                                                                              "this campaign)", step=1)
         st.session_state['outcome'] = st.radio("Outcome of the previous marketing campaign",
@@ -77,6 +77,5 @@ if st.session_state['resultVisible']:
         column_predictions('GaussianNB', 'pip3_model.pkl', query)
 
     final_prediction('main_model.pkl', query)
-
     st.toast("SVM may choose other models as an answer than those with a probability greater than 50% "
              "https://scikit-learn.org/stable/modules/svm.html#scores-probabilities")
