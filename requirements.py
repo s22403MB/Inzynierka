@@ -1,7 +1,6 @@
 import pandas as pd
 import streamlit as st
 import time
-from math import log10
 
 
 def identity_transform(x):

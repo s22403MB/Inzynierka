@@ -1,5 +1,6 @@
 from requirements import *
 from predict import *
+from math import log10
 
 if 'formVisible' not in st.session_state:
     st.session_state['formVisible'] = True
@@ -74,4 +75,4 @@ if st.session_state['resultVisible']:
     final_prediction('main_model.pkl', query)
 
     st.toast("SVM may choose other models as an answer than those with a probability greater than 50% "
-             "https://scikit-learn.org/dev/modules/svm.html#classification")
+             "https://scikit-learn.org/stable/modules/svm.html#scores-probabilities")
