@@ -1,4 +1,4 @@
-from requirements import *
+from functions import *
 from predict import *
 from math import log10
 

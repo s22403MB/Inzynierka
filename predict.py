@@ -31,9 +31,9 @@ def final_prediction(file, query):
     main_model = joblib.load(file)
     result = main_model.predict(query)[0]
     if result == 0:
-        st.markdown(f"<div align='center'>Final result of advertisement: <span style='color: red;'>"
-                    f"Failure</span></div>", unsafe_allow_html=True)
+        st.markdown(f"<div align='center'><b>Final result of advertisement: <span style='color: red;'>"
+                    f"Failure</span></b></div>", unsafe_allow_html=True)
     else:
-        st.markdown(f"<div align='center'>Final result of advertisement: <span style='color: green;'>"
-                    f"Success</span></div>", unsafe_allow_html=True)
+        st.markdown(f"<div align='center'><b>Final result of advertisement: <span style='color: green;'>"
+                    f"Success</span></b></div>", unsafe_allow_html=True)
         st.balloons()
