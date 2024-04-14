@@ -1,6 +1,8 @@
 from functions import *
 from predict import *
 from math import log10
+import pandas as pd
+
 
 if 'formVisible' not in st.session_state:
     st.session_state['formVisible'] = True
@@ -9,6 +11,8 @@ if 'resultVisible' not in st.session_state:
     st.session_state['resultVisible'] = False
 
 if st.session_state['formVisible']:
+    st.markdown("<i><h5>Using of machine learning algorithms to analyse the success of bank advertising</h5></i>",
+                unsafe_allow_html=True)
     st.session_state['age'] = st.slider("Age:", 15, 120, 15)
     st.session_state['job'] = st.selectbox("Job:", options=["admin.", "blue-collar", "entrepreneur", "housemaid",
                                                             "management", "retired", "self-employed", "services",

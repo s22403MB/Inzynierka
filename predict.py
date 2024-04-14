@@ -1,6 +1,5 @@
 import streamlit as st
 import joblib
-import pandas as pd
 
 
 def column_predictions(name, file, query):
