@@ -1,0 +1,1 @@
+{"patients": {"rows": 1815210, "columns": 21, "file_size": 256637499}, "processed_patients": {"rows": 128, "columns": 5, "file_size": 9557}, "X_train": {"rows": 102, "columns": 3}, "X_test": {"rows": 26, "columns": 3}}
