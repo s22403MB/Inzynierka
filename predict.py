@@ -12,18 +12,18 @@ def column_predictions(name, file, query):
                     unsafe_allow_html=True)
         if name == 'SVC':
             probability = model.predict_proba(query)[0] * 100
-            st.markdown(f"Predicted Probability: {round(probability[0], 2)}%</div>", unsafe_allow_html=True)
+            st.markdown(f"Predicted probability: {round(probability[0], 2)}%</div>", unsafe_allow_html=True)
             return
     else:
         st.markdown(f"Predicted result of advertisement: <span style='color: green;'>Success</span>",
                     unsafe_allow_html=True)
         if name == "SVC":
             probability = model.predict_proba(query)[0] * 100
-            st.markdown(f"Predicted Probability: {round(probability[1], 2)}%</div>", unsafe_allow_html=True)
+            st.markdown(f"Predicted probability: {round(probability[1], 2)}%</div>", unsafe_allow_html=True)
             return
 
     probability = round(model.predict_proba(query).max() * 100, 2)
-    st.markdown(f"Predicted Probability: {probability}%</div>", unsafe_allow_html=True)
+    st.markdown(f"Predicted probability: {probability}%</div>", unsafe_allow_html=True)
 
 
 def final_prediction(file, query):
