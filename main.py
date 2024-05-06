@@ -79,3 +79,12 @@ if st.session_state['resultVisible']:
     final_prediction('main_model.pkl', query)
     st.toast("SVM may choose other models as an answer than those with a probability greater than 50% "
              "https://scikit-learn.org/stable/modules/svm.html#scores-probabilities")
+
+    with st.popover("About models"):
+        st.write("To minimize the error, a solution was implemented using a cluster of three different "
+                 "machine learning models")
+        st.write("-Support vector machine\n")
+        st.write("-Decision tree\n")
+        st.write("-naive Bayes classifier\n")
+        st.write("by VotingClassifier with hard voting method implemented. This approach allowed for better "
+                 "results than any of the tested models individually.")
